@@ -1,0 +1,670 @@
+{
+	"info": {
+		"_postman_id": "253e447e-3952-41ae-a03d-35a4c2d74b5b",
+		"name": "ParkingAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48984973",
+		"_collection_link": "https://dannyel-kayke-dk-2413434.postman.co/workspace/Dannyel-Kayke's-Workspace~6fef73df-31eb-4b45-865e-c93b3f2f0b31/collection/48984973-253e447e-3952-41ae-a03d-35a4c2d74b5b?action=share&source=collection_link&creator=48984973"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Listar todos os clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar cliente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{randomNome}}\",\r\n    \"cpf\": \"{{randomCpf}}\",\r\n    \"telefone\": \"{{randomTelefone}}\",\r\n    \"email\": \"{{generatedEmail}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar cliente por ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ana Silva Atualizada\",\r\n    \"cpf\": \"11122233344\",\r\n    \"telefone\": \"21999999999\",\r\n    \"email\": \"ana.silva.novo@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir cliente por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionário",
+			"item": [
+				{
+					"name": "Listar todos os funcionários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/funcionarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar funcionário por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/funcionarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo funcionário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"{{randomNome}}\",\r\n    \"cpf\": \"{{randomCpf}}\",\r\n    \"telefone\": \"{{randomTelefone}}\",\r\n    \"cargo\": \"Operadora de Caixa\",\r\n    \"salario\": {{funcSalario}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/funcionarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir funcionário por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/funcionarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"funcionarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veículo",
+			"item": [
+				{
+					"name": "Listar todos os veículos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar veículo por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar veículos por modelo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculos/search?modelo=Civic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculos",
+								"search"
+							],
+							"query": [
+								{
+									"key": "modelo",
+									"value": "Civic"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo veículo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placa\": \"{{randomPlaca}}\",\r\n    \"modelo\": \"Fiat Mobi\",\r\n    \"cor\": \"Branco\",\r\n    \"vaga\": \"D-03\",\r\n    \"tipoVeiculo\": \"MOTO\" // MOTO // CARRO_PEQUENO // CARRO_GRANGE\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculos?clienteId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculos"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir veículo por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estadia",
+			"item": [
+				{
+					"name": "Listar todas as estadias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/estadias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estadias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar estadia por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/estadias/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estadias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar estadias por período",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/estadias/search/date?inicio=2025-10-31T08:00:00&fim=2025-10-31T12:00:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estadias",
+								"search",
+								"date"
+							],
+							"query": [
+								{
+									"key": "inicio",
+									"value": "2025-10-31T08:00:00"
+								},
+								{
+									"key": "fim",
+									"value": "2025-10-31T12:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar entrada de veículo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/estadias?veiculoId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estadias"
+							],
+							"query": [
+								{
+									"key": "veiculoId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar saída de veículo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/estadias/1/saida?valor=25.50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estadias",
+								"1",
+								"saida"
+							],
+							"query": [
+								{
+									"key": "valor",
+									"value": "25.50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir registro de estadia",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/estadias/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estadias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"let nomeCompleto = pm.variables.replaceIn('{{$randomFullName}}');\r",
+					"\r",
+					"let emailNomeBase = nomeCompleto\r",
+					"    .toLowerCase() \r",
+					"    .replace(/'/g, \"\")        \r",
+					"    .replace(/[^a-z0-9\\s]/g, \"\") \r",
+					"    .replace(/\\s+/g, '.'); \r",
+					"\r",
+					"let emailGerado = `${emailNomeBase}@email.com`;\r",
+					"\r",
+					"pm.collectionVariables.set(\"randomNome\", nomeCompleto);\r",
+					"pm.collectionVariables.set(\"generatedEmail\", emailGerado);\r",
+					"\r",
+					"// -------------------\r",
+					"function gerarCPF() {\r",
+					"    let n = [];\r",
+					"    for (let i = 0; i < 9; i++) {\r",
+					"        n.push(Math.floor(Math.random() * 10));\r",
+					"    }\r",
+					"    let d1 = n.reduce((acc, val, idx) => acc + val * (10 - idx), 0);\r",
+					"    d1 = 11 - (d1 % 11);\r",
+					"    if (d1 >= 10) d1 = 0;\r",
+					"    let d2 = n.reduce((acc, val, idx) => acc + val * (11 - idx), 0);\r",
+					"    d2 += d1 * 2;\r",
+					"    d2 = 11 - (d2 % 11);\r",
+					"    if (d2 >= 10) d2 = 0;\r",
+					"    return `${n.join('')}${d1}${d2}`;\r",
+					"}\r",
+					"\r",
+					"pm.collectionVariables.set(\"randomCpf\", gerarCPF());\r",
+					"\r",
+					"// ----------------\r",
+					"function gerarTelefone() {\r",
+					"    let ddd = Math.floor(Math.random() * 80) + 11;\r",
+					"    let prefixo = 90000 + Math.floor(Math.random() * 10000);\r",
+					"    let sufixo = Math.floor(Math.random() * 10000);\r",
+					"    let sufixoStr = sufixo.toString().padStart(4, '0');\r",
+					"    return `${ddd} ${prefixo}-${sufixoStr}`;\r",
+					"}\r",
+					"\r",
+					"pm.collectionVariables.set(\"randomTelefone\", gerarTelefone());\r",
+					"\r",
+					"\r",
+					"// ----------------\r",
+					"let cargoAleatorio = pm.variables.replaceIn('{{$randomJobTitle}}');\r",
+					"\r",
+					"// Gera um salário aleatório entre 1500.00 e 10000.00\r",
+					"let minSalario = 1500;\r",
+					"let maxSalario = 10000;\r",
+					"let salarioAleatorio = (Math.random() * (maxSalario - minSalario) + minSalario).toFixed(2);\r",
+					"\r",
+					"pm.collectionVariables.set(\"funcCargo\", cargoAleatorio);\r",
+					"pm.collectionVariables.set(\"funcSalario\", salarioAleatorio);\r",
+					"\r",
+					"\r",
+					"// ------------------\r",
+					"function gerarPlacaAntiga() {\r",
+					"    let letras = \"\";\r",
+					"    const alfabeto = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+					"\r",
+					"    for (let i = 0; i < 3; i++) {\r",
+					"        let indiceAleatorio = Math.floor(Math.random() * alfabeto.length);\r",
+					"        letras += alfabeto.charAt(indiceAleatorio);\r",
+					"    }\r",
+					"\r",
+					"    let numeros = Math.floor(1000 + Math.random() * 9000).toString();\r",
+					"    let placa = `${letras}-${numeros}`;\r",
+					"    return placa.toString();\r",
+					"}\r",
+					"\r",
+					"pm.collectionVariables.set(\"randomPlaca\", gerarPlacaAntiga());\r",
+					"\r",
+					"// ----------------\r",
+					"function gerarPlacaMercosul() {\r",
+					"    let l1 = pm.variables.replaceIn('{{$randomLetter}}').toUpperCase();\r",
+					"    let l2 = pm.variables.replaceIn('{{$randomLetter}}').toUpperCase();\r",
+					"    let l3 = pm.variables.replaceIn('{{$randomLetter}}').toUpperCase();\r",
+					"    \r",
+					"    let n1 = Math.floor(Math.random() * 10);\r",
+					"    \r",
+					"    let l4 = pm.variables.replaceIn('{{$randomLetter}}').toUpperCase();\r",
+					"    \r",
+					"    let n2 = Math.floor(Math.random() * 10);\r",
+					"    let n3 = Math.floor(Math.random() * 10);\r",
+					"    \r",
+					"    let placa = `${l1}${l2}${l3}${n1}${l4}${n2}${n3}`;\r",
+					"    return placa;\r",
+					"}\r",
+					" \r",
+					"pm.collectionVariables.set(\"randomPlacaMercosul\", gerarPlacaMercosul());\r",
+					" "
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "randomCpf",
+			"value": ""
+		},
+		{
+			"key": "randomNome",
+			"value": ""
+		},
+		{
+			"key": "generatedEmail",
+			"value": ""
+		},
+		{
+			"key": "randomTelefone",
+			"value": ""
+		},
+		{
+			"key": "funcCargo",
+			"value": ""
+		},
+		{
+			"key": "funcSalario",
+			"value": ""
+		},
+		{
+			"key": "randomPlaca",
+			"value": ""
+		},
+		{
+			"key": "randomPlacaMercosul",
+			"value": ""
+		}
+	]
+}
