@@ -1,14 +1,27 @@
 package br.edu.infnet.dannyelapi.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -36,6 +49,11 @@ public class Veiculo {
 
     private boolean estacionado = false;
 
+    @NotNull(message = "O tipo do veículo é obrigatório.")
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoVeiculo tipoVeiculo;
+
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
@@ -44,11 +62,12 @@ public class Veiculo {
     @JsonIgnore
     private List<RegistroEstadia> estadias = new ArrayList<>();
 
-    public Veiculo(String placa, String modelo, String cor, String vaga, Cliente cliente) {
+    public Veiculo(String placa, String modelo, String cor, String vaga, TipoVeiculo tipoVeiculo, Cliente cliente) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
         this.vaga = vaga;
+        this.tipoVeiculo = tipoVeiculo;
         this.cliente = cliente;
     }
 }

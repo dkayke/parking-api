@@ -67,8 +67,8 @@ public class RegistroEstadiaController {
     }
 
     @PutMapping("/{id}/saida")
-    public ResponseEntity<RegistroEstadia> registrarSaida(@PathVariable Long id, @RequestParam Double valor) {
-        RegistroEstadia registroAtualizado = registroEstadiaService.registrarSaida(id, valor);
+    public ResponseEntity<RegistroEstadia> registrarSaida(@PathVariable Long id) {
+        RegistroEstadia registroAtualizado = registroEstadiaService.registrarSaida(id);
         return ResponseEntity.ok(registroAtualizado);
     }
 
